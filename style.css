@@ -1155,7 +1155,7 @@ tbody tr:hover {
         visibility: hidden;
     }
 
-    #reciboImpressao,
+    #reciboImpressio,
     #reciboImpressao * {
         visibility: visible;
     }
