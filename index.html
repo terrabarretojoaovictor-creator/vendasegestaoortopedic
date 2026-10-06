@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ortopédica Alterosa</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TELA DE LOGIN
+===================================================== -->
+
+<section
+    id="telaLogin"
+    class="tela-login"
+>
+
+    <div class="login-card">
+
+        <div class="login-logo">
+
+            <div class="icone-login">
+                +
+            </div>
+
+        </div>
+
+
+        <h1>
+            Ortopédica Alterosa
+        </h1>
+
+
+        <p class="login-subtitulo">
+            Sistema de gerenciamento
+        </p>
+
+
+        <div class="linha-login"></div>
+
+
+        <form id="formLogin">
+
+
+            <div class="campo-login">
+
+                <label>
+                    Usuário
+                </label>
+
+                <div class="input-login">
+
+                    <span>👤</span>
+
+                    <input
+                        type="text"
+                        id="usuarioLogin"
+                        placeholder="Digite seu usuário"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="campo-login">
+
+                <label>
+                    Senha
+                </label>
+
+                <div class="input-login">
+
+                    <span>🔒</span>
+
+                    <input
+                        type="password"
+                        id="senhaLogin"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="botao-olho"
+                        id="mostrarSenha"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="mensagemLogin"
+                class="mensagem-login"
+            ></div>
+
+
+            <button
+                type="submit"
+                class="botao-entrar"
+            >
+                Entrar no Sistema
+            </button>
+
+
+        </form>
+
+
+        <div class="login-rodape">
+            Ortopédica Alterosa
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SISTEMA
+===================================================== -->
+
+<section
+    id="sistema"
+    class="sistema escondido"
+>
+
+
+    <!-- =================================================
+         TOPO
+    ================================================== -->
+
+    <header class="topo">
+
+
+        <div class="topo-esquerda">
+
+            <div class="logo-sistema">
+                +
+            </div>
+
+
+            <div>
+
+                <h1>
+                    Ortopédica Alterosa
+                </h1>
+
+                <p>
+                    Sistema de gerenciamento
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="usuario-logado">
+
+
+            <div class="usuario-info">
+
+                <strong
+                    id="nomeUsuarioLogado"
+                >
+                    -
+                </strong>
+
+                <span
+                    id="tipoUsuarioLogado"
+                >
+                    -
+                </span>
+
+            </div>
+
+
+            <button
+                id="btnSair"
+                class="btn-sair"
+                type="button"
+            >
+                Sair
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         MENU
+    ================================================== -->
+
+    <nav class="menu">
+
+
+        <button
+            class="menu-btn ativo"
+            id="menuPedidos"
+            data-aba="pedidos"
+            type="button"
+        >
+            🛒
+            Vendas
+        </button>
+
+
+        <button
+            class="menu-btn"
+            id="menuEstoque"
+            data-aba="estoque"
+            type="button"
+        >
+            📦
+            Estoque
+        </button>
+
+
+        <button
+            class="menu-btn"
+            id="menuHistorico"
+            data-aba="historico"
+            type="button"
+        >
+            📋
+            Histórico
+        </button>
+
+
+        <button
+            class="menu-btn"
+            id="menuAluguel"
+            data-aba="aluguel"
+            type="button"
+        >
+            ♿
+            Aluguel
+        </button>
+
+
+    </nav>
+
+
+
+    <!-- =================================================
+         CONTEÚDO
+    ================================================== -->
+
+    <main class="conteudo">
+
+
+
+        <!-- =================================================
+             ABA VENDAS
+        ================================================== -->
+
+        <section
+            id="aba-pedidos"
+            class="aba ativa"
+        >
+
+
+            <div class="titulo-aba">
+
+                <div>
+
+                    <h2>
+                        Nova Venda
+                    </h2>
+
+                    <p>
+                        Registre uma nova venda e imprima o comprovante.
+                    </p>
+
+                </div>
+
+
+                <span class="badge-permissao">
+                    Vendas
+                </span>
+
+            </div>
+
+
+
+            <div class="card">
+
+
+                <h3>
+                    Dados da Venda
+                </h3>
+
+
+                <form id="formVenda">
+
+
+                    <div class="grid-2">
+
+
+                        <div class="campo">
+
+                            <label for="clienteVenda">
+                                Cliente
+                            </label>
+
+                            <input
+                                type="text"
+                                id="clienteVenda"
+                                placeholder="Nome do cliente"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="produtoVenda">
+                                Produto
+                            </label>
+
+                            <select
+                                id="produtoVenda"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione um produto
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="grid-3">
+
+
+                        <div class="campo">
+
+                            <label for="quantidadeVenda">
+                                Quantidade
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantidadeVenda"
+                                min="1"
+                                value="1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="precoVenda">
+                                Preço Unitário
+                            </label>
+
+                            <input
+                                type="text"
+                                id="precoVenda"
+                                value="R$ 0,00"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="totalVenda">
+                                Total da Venda
+                            </label>
+
+                            <input
+                                type="text"
+                                id="totalVenda"
+                                value="R$ 0,00"
+                                readonly
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="pagamento-area">
+
+
+                        <h3>
+                            Forma de Pagamento
+                        </h3>
+
+
+                        <div class="pagamentos-grid">
+
+
+                            <label class="pagamento-option">
+
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="Pix"
+                                    checked
+                                >
+
+                                Pix
+
+                            </label>
+
+
+                            <label class="pagamento-option">
+
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="Débito"
+                                >
+
+                                Débito
+
+                            </label>
+
+
+                            <label class="pagamento-option">
+
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="Crédito"
+                                >
+
+                                Crédito
+
+                            </label>
+
+
+                            <label class="pagamento-option">
+
+                                <input
+                                    type="radio"
+                                    name="pagamento"
+                                    value="Dinheiro"
+                                >
+
+                                Dinheiro
+
+                            </label>
+
+
+                        </div>
+
+
+
+                        <div
+                            id="areaDinheiro"
+                            class="area-dinheiro escondido"
+                        >
+
+                            <div class="grid-2">
+
+
+                                <div class="campo">
+
+                                    <label for="valorRecebido">
+                                        Valor Recebido
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="valorRecebido"
+                                        min="0"
+                                        step="0.01"
+                                        placeholder="0,00"
+                                    >
+
+                                </div>
+
+
+                                <div class="campo">
+
+                                    <label for="trocoVenda">
+                                        Troco
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="trocoVenda"
+                                        value="R$ 0,00"
+                                        readonly
+                                    >
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="acoes-form">
+
+
+                        <button
+                            type="reset"
+                            class="btn btn-secundario"
+                        >
+                            Limpar
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-principal"
+                        >
+                            Finalizar Venda e Imprimir
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABA ESTOQUE
+        ================================================== -->
+
+        <section
+            id="aba-estoque"
+            class="aba"
+        >
+
+
+            <div class="titulo-aba">
+
+                <div>
+
+                    <h2>
+                        Estoque
+                    </h2>
+
+                    <p>
+                        Cadastre e controle os produtos da loja.
+                    </p>
+
+                </div>
+
+
+                <span class="badge-permissao">
+                    Administrador
+                </span>
+
+            </div>
+
+
+
+            <div class="card">
+
+
+                <h3>
+                    Cadastrar Produto
+                </h3>
+
+
+                <form id="formProduto">
+
+
+                    <div class="grid-4">
+
+
+                        <div class="campo">
+
+                            <label for="codigoProduto">
+                                Código
+                            </label>
+
+                            <input
+                                type="text"
+                                id="codigoProduto"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="nomeProduto">
+                                Nome do Produto
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nomeProduto"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="quantidadeProduto">
+                                Quantidade
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantidadeProduto"
+                                min="0"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="precoProduto">
+                                Preço
+                            </label>
+
+                            <input
+                                type="number"
+                                id="precoProduto"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="acoes-form">
+
+                        <button
+                            type="submit"
+                            class="btn btn-principal"
+                        >
+                            Cadastrar Produto
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+
+            <div class="card">
+
+
+                <div class="cabecalho-tabela">
+
+                    <h3>
+                        Produtos em Estoque
+                    </h3>
+
+
+                    <input
+                        type="text"
+                        id="buscaEstoque"
+                        class="busca"
+                        placeholder="Buscar produto..."
+                    >
+
+                </div>
+
+
+                <div class="tabela-container">
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Código
+                                </th>
+
+                                <th>
+                                    Produto
+                                </th>
+
+                                <th>
+                                    Quantidade
+                                </th>
+
+                                <th>
+                                    Preço
+                                </th>
+
+                                <th>
+                                    Ações
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="tabelaEstoque"
+                        ></tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABA HISTÓRICO
+        ================================================== -->
+
+        <section
+            id="aba-historico"
+            class="aba"
+        >
+
+
+            <div class="titulo-aba">
+
+                <div>
+
+                    <h2>
+                        Histórico de Vendas
+                    </h2>
+
+                    <p>
+                        Consulte as vendas realizadas.
+                    </p>
+
+                </div>
+
+
+                <span class="badge-permissao">
+                    Administrador
+                </span>
+
+            </div>
+
+
+
+            <div class="indicadores">
+
+
+                <div class="indicador">
+
+                    <span>
+                        💰
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Total vendido
+                        </small>
+
+                        <strong id="totalHistorico">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="indicador">
+
+                    <span>
+                        🧾
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Quantidade de vendas
+                        </small>
+
+                        <strong id="quantidadeHistorico">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="indicador">
+
+                    <span>
+                        ⭐
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Produto mais vendido
+                        </small>
+
+                        <strong id="maisVendido">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="card">
+
+
+                <div class="cabecalho-tabela">
+
+                    <h3>
+                        Vendas
+                    </h3>
+
+
+                    <input
+                        type="month"
+                        id="filtroMes"
+                        class="busca"
+                    >
+
+                </div>
+
+
+                <div class="tabela-container">
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Data
+                                </th>
+
+                                <th>
+                                    Cliente
+                                </th>
+
+                                <th>
+                                    Produto
+                                </th>
+
+                                <th>
+                                    Quantidade
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Pagamento
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="tabelaHistorico"
+                        ></tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABA ALUGUEL
+        ================================================== -->
+
+        <section
+            id="aba-aluguel"
+            class="aba"
+        >
+
+
+            <div class="titulo-aba">
+
+                <div>
+
+                    <h2>
+                        Aluguel
+                    </h2>
+
+                    <p>
+                        Controle de produtos alugados.
+                    </p>
+
+                </div>
+
+
+                <span class="badge-permissao">
+                    Vendas e Aluguel
+                </span>
+
+            </div>
+
+
+
+            <div
+                id="alertaAluguel"
+                class="alerta-aluguel escondido"
+            ></div>
+
+
+
+            <div class="sub-menu">
+
+
+                <button
+                    class="sub-btn ativo"
+                    data-sub="novo-aluguel"
+                    type="button"
+                >
+                    Novo Aluguel
+                </button>
+
+
+                <button
+                    class="sub-btn"
+                    data-sub="aluguels-ativos"
+                    type="button"
+                >
+                    Aluguéis Ativos
+                </button>
+
+
+                <button
+                    class="sub-btn admin-aluguel"
+                    data-sub="estoque-aluguel"
+                    type="button"
+                >
+                    Estoque de Aluguel
+                </button>
+
+
+            </div>
+
+
+
+            <!-- NOVO ALUGUEL -->
+
+            <div
+                id="sub-novo-aluguel"
+                class="sub-aba ativa"
+            >
+
+
+                <div class="card">
+
+
+                    <h3>
+                        Registrar Novo Aluguel
+                    </h3>
+
+
+                    <form id="formAluguel">
+
+
+                        <div class="grid-2">
+
+
+                            <div class="campo">
+
+                                <label for="clienteAluguel">
+                                    Nome do Cliente
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="clienteAluguel"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="cpfAluguel">
+                                    CPF
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="cpfAluguel"
+                                    required
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="grid-2">
+
+
+                            <div class="campo">
+
+                                <label for="telefoneAluguel">
+                                    Telefone
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="telefoneAluguel"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="enderecoAluguel">
+                                    Endereço
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="enderecoAluguel"
+                                    required
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="grid-2">
+
+
+                            <div class="campo">
+
+                                <label for="produtoAluguel">
+                                    Produto
+                                </label>
+
+                                <select
+                                    id="produtoAluguel"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione o produto
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="duracaoAluguel">
+                                    Duração (dias)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="duracaoAluguel"
+                                    min="1"
+                                    value="7"
+                                    required
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="acoes-form">
+
+                            <button
+                                type="reset"
+                                class="btn btn-secundario"
+                            >
+                                Limpar
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-principal"
+                            >
+                                Registrar Aluguel
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ALUGUÉIS ATIVOS -->
+
+            <div
+                id="sub-aluguels-ativos"
+                class="sub-aba"
+            >
+
+
+                <div class="card">
+
+
+                    <div class="cabecalho-tabela">
+
+                        <h3>
+                            Aluguéis
+                        </h3>
+
+                    </div>
+
+
+                    <div class="tabela-container">
+
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Cliente
+                                    </th>
+
+                                    <th>
+                                        Produto
+                                    </th>
+
+                                    <th>
+                                        Início
+                                    </th>
+
+                                    <th>
+                                        Vencimento
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Ações
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="tabelaAlugueis"
+                            ></tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ESTOQUE DE ALUGUEL -->
+
+            <div
+                id="sub-estoque-aluguel"
+                class="sub-aba"
+            >
+
+
+                <div class="card">
+
+
+                    <h3>
+                        Cadastrar Produto para Aluguel
+                    </h3>
+
+
+                    <form id="formProdutoAluguel">
+
+
+                        <div class="grid-3">
+
+
+                            <div class="campo">
+
+                                <label for="codigoProdutoAluguel">
+                                    Código
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="codigoProdutoAluguel"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="nomeProdutoAluguel">
+                                    Produto
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nomeProdutoAluguel"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="quantidadeProdutoAluguel">
+                                    Quantidade
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="quantidadeProdutoAluguel"
+                                    min="0"
+                                    required
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="acoes-form">
+
+                            <button
+                                type="submit"
+                                class="btn btn-principal"
+                            >
+                                Cadastrar Produto
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+
+
+                <div class="card">
+
+
+                    <h3>
+                        Estoque de Produtos para Aluguel
+                    </h3>
+
+
+                    <div class="tabela-container">
+
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Código
+                                    </th>
+
+                                    <th>
+                                        Produto
+                                    </th>
+
+                                    <th>
+                                        Quantidade
+                                    </th>
+
+                                    <th>
+                                        Ações
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="tabelaEstoqueAluguel"
+                            ></tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     RECIBO
+===================================================== -->
+
+<div
+    id="reciboImpressao"
+    class="recibo"
+>
+
+
+    <div class="recibo-cabecalho">
+
+
+        <h1>
+            ORTOPÉDICA ALTEROSA
+        </h1>
+
+
+        <p>
+            Rua Guarani, 332
+        </p>
+
+
+        <p>
+            Tel.: (35) 99917-1325 | (35) 99777-4381
+        </p>
+
+
+        <p>
+            Comprovante de Venda
+        </p>
+
+
+    </div>
+
+
+    <div class="recibo-linha"></div>
+
+
+    <div id="conteudoRecibo"></div>
+
+
+    <div class="recibo-linha"></div>
+
+
+    <div class="recibo-final">
+
+        Obrigado pela preferência!
+
+    </div>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
